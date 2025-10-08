@@ -21,6 +21,7 @@ nav .title {
 
 nav ul {
     display: flex;
+    align-items: center;
 }
 
 nav ul.open {
@@ -63,6 +64,94 @@ nav .burger-menu span {
     background-color: white;
     border-radius: 0.2rem;
 }
+
+
+/* Search Bar */
+.search-wrapper {
+    position: relative; /* keeps dropdown aligned to bar */
+    width: 40%; /* same as your search bar width */
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.search-bar-container {
+    width: 100%; /* make input fill the wrapper */
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    height: 2.5rem;
+    padding: 0 15px;
+    box-shadow: 0px 0px 8px #ddd;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    width: 100%;
+    margin-left: 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#search-icon {
+    color: royalblue;
+}
+
+.search-li {
+    position: relative; /* keeps dropdown aligned to bar */
+    width: 40%; /* same as your search bar width */
+}
+
+/* Search Results List */
+.results-list {
+    position: absolute;
+    top: calc(100% + 8px); /* sits just below input */
+    left: 0; /* align perfectly with input */
+    width: 100%; /* ✅ same width as search bar */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 8px #ddd;
+    border-radius: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease-in, transform 0.4s ease-in;
+    z-index: 999; /* ensures dropdown stays above nav */
+}
+
+.results-list.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.search-result {
+    padding: 10px 20px;
+    transition: background-color 0.2s ease;
+}
+
+.search-result:hover {
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+
+/* Responsive Navbar Styles  */
 
 @media (max-width: 768px) {
     

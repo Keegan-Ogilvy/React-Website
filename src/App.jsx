@@ -10,6 +10,8 @@ import {Home, About, Contact, Services} from "./components/pages";
 
 function App() {
 
+  const [results, setResults] = useState([]);
+
   return (
     <div className="App">
       <Navbar />
@@ -19,6 +21,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
       </Routes>
+      <SearchBar setResults={setResults} />    <SearchResultList results={results} />  
     </div>
   )
 }
