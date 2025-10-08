@@ -9,6 +9,7 @@ nav {
     background-color: #0f172a;
     position:sticky;
     top: 0;
+    padding: 0 1rem;
 }
 
 nav .title {
@@ -22,6 +23,7 @@ nav .title {
 nav ul {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 
 nav ul.open {
@@ -178,6 +180,25 @@ input:focus {
 
     nav ul li a {
         margin: 0.25rem 0.5rem;
+    }
+
+    .search-li {
+        position: relative;
+        width: 100%;
+        padding: 0 0.5rem; /* side spacing inside parent */
+        box-sizing: border-box; /* ensure padding doesn’t break layout */
+    }
+
+    .search-bar-container {
+        width: 100%;
+        box-sizing: border-box;
+        /* remove side margin */
+        margin: 0;
+    }
+
+    .input-wrapper input {
+        text-align: center;
+        font-size: 1.25rem;
     }
 
 }
